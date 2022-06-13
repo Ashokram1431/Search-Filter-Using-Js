@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Search Fillter Using Js</title>
+</head>
+<body>
+	<h1>Search Fillter Using Js</h1>
+	<input type="text" id='inp' name="">
+	<ul>
+    <li>Neil Armstrong</li>
+    <li>Alan Bean</li>
+    <li>Peter Conrad</li>
+    <li>Edgar Mitchell</li>
+    <li>Alan Shepard</li>
+	</ul>
+
+</body>
+<script type="text/javascript">
+	document.getElementById('inp').addEventListener('keyup',Keyupfun)
+	function Keyupfun(){
+		var a=document.querySelectorAll('li');
+		for (var i = 0;i<a.length; i++) {
+			var val=document.getElementById('inp').value.toLowerCase();
+			if (a[i].innerHTML.toLowerCase().indexOf(val)!=-1) {
+				a[i].style.display='block';
+			}
+			else{
+				a[i].style.display='none';
+			}
+		}
+	}</script>
+</html>
